@@ -1,0 +1,142 @@
+.section {
+  background: var(--dark);
+  position: relative;
+  z-index: 1;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  padding: 14px 32px;
+  font-family: 'DM Sans';
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tabBtn.active {
+  color: var(--neon);
+  border-bottom-color: var(--neon);
+}
+
+.tabBtn:hover {
+  color: var(--text);
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 120px 1px 1fr;
+  gap: 0 32px;
+  align-items: start;
+  padding: 0 0 32px;
+  position: relative;
+}
+
+.time {
+  font-family: 'Orbitron';
+  font-size: 0.78rem;
+  color: var(--neon);
+  text-align: right;
+  padding-top: 4px;
+  letter-spacing: 1px;
+}
+
+.line {
+  width: 1px;
+  background: rgba(0, 245, 255, 0.2);
+  position: relative;
+  min-height: 60px;
+}
+
+.line::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--neon);
+  box-shadow: 0 0 12px var(--neon);
+}
+
+.itemContent {
+  padding: 0 0 0 8px;
+}
+
+.name {
+  font-family: 'Orbitron';
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.desc {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 12px;
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.tagTech {
+  background: rgba(0, 245, 255, 0.12);
+  color: var(--neon);
+}
+
+.tagCultural {
+  background: rgba(255, 0, 110, 0.12);
+  color: var(--neon2);
+}
+
+.tagSports {
+  background: rgba(173, 255, 47, 0.12);
+  color: var(--neon3);
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .tabBtn {
+    padding: 10px 16px;
+    font-size: 0.7rem;
+  }
+}

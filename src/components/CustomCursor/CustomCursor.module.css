@@ -1,0 +1,23 @@
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: var(--neon);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s, opacity 0.2s;
+  mix-blend-mode: screen;
+}
+
+.cursor_ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--neon);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.5;
+  transition: transform 0.25s cubic-bezier(.2,.8,.2,1), opacity 0.2s;
+}

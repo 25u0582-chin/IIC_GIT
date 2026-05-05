@@ -1,0 +1,184 @@
+@import '../../styles/animations.css';
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 60px 80px;
+  z-index: 1;
+}
+
+.orbs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.18;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 600px;
+  height: 600px;
+  background: var(--neon);
+  top: -200px;
+  left: -200px;
+  animation-delay: 0s;
+}
+
+.orb2 {
+  width: 500px;
+  height: 500px;
+  background: var(--neon2);
+  bottom: -200px;
+  right: -150px;
+  animation-delay: -3s;
+}
+
+.orb3 {
+  width: 350px;
+  height: 350px;
+  background: var(--neon3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -5s;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  padding: 6px 20px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: 32px;
+  background: rgba(0, 245, 255, 0.05);
+  animation: fadeUp 0.8s both;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background: var(--neon3);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5rem, 14vw, 13rem);
+  line-height: 0.9;
+  text-align: center;
+  letter-spacing: 6px;
+  position: relative;
+  animation: fadeUp 0.8s 0.2s both;
+}
+
+.line1 {
+  display: block;
+  background: linear-gradient(90deg, var(--text) 40%, var(--neon));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.line2 {
+  display: block;
+  background: linear-gradient(90deg, var(--neon2), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--muted);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin: 24px 0 48px;
+  animation: fadeUp 0.8s 0.4s both;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  animation: fadeUp 0.8s 0.6s both;
+}
+
+.stats {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 60px;
+  animation: fadeUp 0.8s 0.8s both;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNum {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--neon), var(--neon3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--neon), transparent);
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 24px 60px;
+  }
+
+  .stats {
+    gap: 30px;
+  }
+
+  .title {
+    font-size: clamp(3.5rem, 15vw, 6rem);
+  }
+}

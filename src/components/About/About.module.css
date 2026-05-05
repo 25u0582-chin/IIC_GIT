@@ -1,0 +1,110 @@
+.section {
+  background: var(--dark2);
+  position: relative;
+  z-index: 1;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.img {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.08), rgba(255, 0, 110, 0.05));
+  border: 1px solid rgba(0, 245, 255, 0.12);
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.img::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid var(--neon);
+  border-right: 2px solid var(--neon);
+}
+
+.img::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: -12px;
+  width: 60px;
+  height: 60px;
+  border-bottom: 2px solid var(--neon2);
+  border-left: 2px solid var(--neon2);
+}
+
+.year {
+  font-family: 'Bebas Neue';
+  font-size: 8rem;
+  letter-spacing: 6px;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--neon), var(--neon2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.yearLabel {
+  font-family: 'Orbitron';
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: var(--neon);
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+.text p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.list li::before {
+  content: '◆';
+  color: var(--neon3);
+  font-size: 0.5rem;
+}
+
+.estLabel {
+  font-size: 0.7rem;
+  letter-spacing: 5px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .year {
+    font-size: 5rem;
+  }
+}

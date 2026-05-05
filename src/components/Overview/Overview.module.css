@@ -1,0 +1,117 @@
+.section {
+  background: var(--dark2);
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.card {
+  background: var(--surface);
+  padding: 48px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+  cursor: default;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.card:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--neon);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.text {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+.featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.08), rgba(255, 0, 110, 0.04));
+  border-color: rgba(0, 245, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.featuredLeft {
+  flex: 1;
+}
+
+.featuredBig {
+  font-family: 'Bebas Neue';
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.featuredRight {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.locationIcon {
+  font-size: 5rem;
+}
+
+.locationLabel {
+  font-family: 'Orbitron';
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: var(--neon);
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+.locationDate {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,98 @@
+.section {
+  background: var(--dark2);
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+  cursor: pointer;
+  background: var(--surface);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-color, var(--neon));
+  transform: scaleX(0);
+  transition: transform 0.4s;
+  transform-origin: left;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+}
+
+.num {
+  font-family: 'Orbitron';
+  font-size: 0.68rem;
+  letter-spacing: 4px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+}
+
+.name {
+  font-family: 'Bebas Neue';
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  color: var(--theme-color, var(--text));
+  text-transform: uppercase;
+}
+
+.desc {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.problems {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.problem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.problem::before {
+  content: '→';
+  color: var(--neon);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
