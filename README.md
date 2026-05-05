@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Festie2k26
 
 Festie2k26 is a React + Vite single-page event website for a fictional inter-college festival. The site is built as a high-energy landing experience for promotion, discovery, and participant registration, with dedicated sections for the event overview, 3-day schedule, hackathon themes, FAQs, contact details, and festival background.
@@ -294,3 +295,6 @@ If you want real registrations, the next logical step is connecting the form to:
 ## Summary
 
 This repository contains a polished promotional frontend for Festie2k26, focused on visual impact, event storytelling, and participant onboarding. It is a good base for a college fest landing page, hackathon microsite, or cultural event registration website.
+=======
+# IIC_GIT
+>>>>>>> f2d92a29d9f315dd99463defefe400ac03d63340
